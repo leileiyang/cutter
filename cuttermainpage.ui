@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CutterMainPage</class>
+ <widget class="QWidget" name="CutterMainPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>568</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CutterMainPage</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="processing_">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="start_pb_">
+           <property name="text">
+            <string>start</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="resume_pb_">
+           <property name="text">
+            <string>resume</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pause_pb_">
+           <property name="text">
+            <string>pause</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="stop_pb_">
+           <property name="text">
+            <string>stop</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>419</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="craft_params_">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="layer1_">
+          <attribute name="title">
+           <string>layer1</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="LayerCfg" name="layer1_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="layer2_">
+          <attribute name="title">
+           <string>layer2</string>
+          </attribute>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2"/>
+     <widget class="QWidget" name="page_3"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>LayerCfg</class>
+   <extends>QWidget</extends>
+   <header location="global">layercfg.h</header>
+   <container>1</container>
+   <slots>
+    <signal>cfgDataChanged()</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>tabWidget</sender>
+   <signal>currentChanged(int)</signal>
+   <receiver>CutterMainPage</receiver>
+   <slot>onPubCfgData(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>18</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>start_pb_</sender>
+   <signal>clicked()</signal>
+   <receiver>CutterMainPage</receiver>
+   <slot>onStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>143</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resume_pb_</sender>
+   <signal>clicked()</signal>
+   <receiver>CutterMainPage</receiver>
+   <slot>onResume()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pause_pb_</sender>
+   <signal>clicked()</signal>
+   <receiver>CutterMainPage</receiver>
+   <slot>onPause()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-7</x>
+     <y>173</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stop_pb_</sender>
+   <signal>clicked()</signal>
+   <receiver>CutterMainPage</receiver>
+   <slot>onStop()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>420</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-7</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onCfgDataChanged()</slot>
+  <slot>onPubCfgData(int)</slot>
+  <slot>onStart()</slot>
+  <slot>onResume()</slot>
+  <slot>onPause()</slot>
+  <slot>onStop()</slot>
+ </slots>
+</ui>

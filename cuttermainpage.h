@@ -1,0 +1,48 @@
+#ifndef CUTTERMAINPAGE_H
+#define CUTTERMAINPAGE_H
+
+#include <QWidget>
+#include <vector>
+#include "dev_cfg/GasCfg.h"
+#include "dev_cfg/LaserCfg.h"
+#include "dev_cfg/FollowerCfg.h"
+#include "dev_cfg/DelayCfg.h"
+
+#include "controller.h"
+
+namespace Ui {
+class CutterMainPage;
+}
+
+struct CraftData;
+
+class CutterMainPage : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit CutterMainPage(QWidget *parent = 0);
+    ~CutterMainPage();
+
+public slots:
+    void onPubCfgData(int index);
+    void onCraftUpdate(int level, const CraftData &data);
+    void onStart();
+    void onStop();
+    void onResume();
+    void onPause();
+
+private:
+    Ui::CutterMainPage *ui;
+
+    bool cfg_data_changed_;
+    int current_layer_;
+
+    std::vector<GasCfg> gas_cfg_;
+    std::vector<FollowerCfg> lhc_cfg_;
+    std::vector<LaserCfg> laser_cfg_;
+    std::vector<DelayCfg> delay_cfg_;
+    Controller controller_;
+};
+
+#endif // CUTTERMAINPAGE_H

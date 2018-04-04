@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LayerCfgForm</class>
+ <widget class="QWidget" name="LayerCfgForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>768</width>
+    <height>581</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QCheckBox" name="checkBox">
+       <property name="text">
+        <string>no lift</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_2">
+       <property name="text">
+        <string>pre-pierce</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_3">
+       <property name="text">
+        <string>striping</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_4">
+       <property name="text">
+        <string>cooling</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QCheckBox" name="checkBox_5">
+         <property name="text">
+          <string>cutting</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="spinBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_6">
+       <property name="text">
+        <string>keep air</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_7">
+       <property name="text">
+        <string>no follow</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_8">
+       <property name="text">
+        <string>skip</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="plc_cfg_">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="cutting_">
+      <attribute name="title">
+       <string>cutting</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="CraftParam" name="cutting1_" native="true"/>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>709</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="pierce_">
+      <attribute name="title">
+       <string>pierce</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,22">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QRadioButton" name="radioButton">
+           <property name="text">
+            <string>no pierce</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radioButton_2">
+           <property name="text">
+            <string>pierce1</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radioButton_3">
+           <property name="text">
+            <string>pierce2</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="radioButton_4">
+           <property name="text">
+            <string>pierce3</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="CraftParam" name="pierce1_" native="true"/>
+         </item>
+         <item>
+          <widget class="CraftParam" name="pierce2_" native="true"/>
+         </item>
+         <item>
+          <widget class="CraftParam" name="pierce3_" native="true"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CraftParam</class>
+   <extends>QWidget</extends>
+   <header location="global">craftparam.h</header>
+   <container>1</container>
+   <slots>
+    <signal>dataChanged()</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>cutting1_</sender>
+   <signal>dataChanged()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onCuttingUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>291</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-7</x>
+     <y>269</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pierce1_</sender>
+   <signal>dataChanged()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onPierce1Update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>12</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-3</x>
+     <y>309</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pierce2_</sender>
+   <signal>dataChanged()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onPierce2Update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>263</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>372</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pierce3_</sender>
+   <signal>dataChanged()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onPierce3Update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>512</x>
+     <y>294</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>482</x>
+     <y>581</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onCuttingUpdate()</slot>
+  <slot>onPierce1Update()</slot>
+  <slot>onPierce2Update()</slot>
+  <slot>onPierce3Update()</slot>
+ </slots>
+</ui>
