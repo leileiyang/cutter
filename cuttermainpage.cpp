@@ -73,11 +73,13 @@ void CutterMainPage::onCraftUpdate(int level, const CraftData &data) {
 }
 
 void CutterMainPage::onStart() {
+  controller_.AutoMode();
   controller_.Start();
 }
 
 void CutterMainPage::onStop() {
   controller_.Stop();
+  controller_.ManualMode();
 }
 
 void CutterMainPage::onResume() {
