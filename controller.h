@@ -3,6 +3,8 @@
 
 #include <zmq.h>
 #include "dev_cfg/PlcCfg.h"
+#include "dev_cfg/FollowerCfg.h"
+#include "dev_cfg/GasCfg.h"
 
 #define SEND_CMD_SUCCESS 0
 #define SEND_CMD_FAIL   -1
@@ -30,12 +32,17 @@ public:
     int ManualMode();
     int CommonCommand(const PlcCmd &cmd);
     bool PreparePubData();
+    int PubGasCfg(int layer, const GasCfg &gas_cfg);
+    int PubLhcCfg(int layer, const FollowerCfg &lhc_cfg);
 
 private:
     void *context_;
     void *requester_;
     void *publisher_;
     void *ack_subscriber_;
+
+    int SendMessage(void *socket, const char *content, int flags);
+    int PubCfg(const char *device, int layer, const std::ostringstream &ofs);
 };
 
 #endif // CONTROLLER_H

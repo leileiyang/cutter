@@ -23,6 +23,7 @@ CutterMainPage::CutterMainPage(QWidget *parent) :
     ui(new Ui::CutterMainPage),
     cfg_data_changed_(false),
     current_layer_(-1),
+    process_cfg_(CRAFT_LAYERS, ProcessCfg()),
     gas_cfg_(CRAFT_LAYERS, GasCfg()),
     lhc_cfg_(CRAFT_LAYERS, FollowerCfg()),
     laser_cfg_(CRAFT_LAYERS, LaserCfg()),
@@ -70,6 +71,15 @@ void CutterMainPage::onCraftUpdate(int level, const CraftData &data) {
 
     cfg_data_changed_ = true;
 
+}
+
+
+void CutterMainPage::switchToProcess() {
+    ui->container_->setCurrentIndex(0);
+}
+
+void CutterMainPage::switchToLayers() {
+    ui->container_->setCurrentIndex(1);
 }
 
 void CutterMainPage::onStart() {

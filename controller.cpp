@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <string.h>
+#include <string>
 #include <unistd.h>
 
 
@@ -60,7 +61,7 @@ bool Controller::Initialize() {
     if (zmq_connect(requester_, "tcp://10.1.0.138:5555") != 0) {
         return false;
     }
-    int opt = 1000;
+    int opt = 1500;
     zmq_setsockopt(requester_, ZMQ_RCVTIMEO, &opt, sizeof(opt));
     return true;
 }
@@ -101,15 +102,17 @@ int Controller::ManualMode() {
     return CommonCommand(cmd);
 }
 
+#define SERIALIZE_CFG(DEVICE_CFG) \
+   std::ostringstream ofs; \
+   boost::archive::text_oarchive oa(ofs); \
+   oa << DEVICE_CFG
+
 int Controller::CommonCommand(const PlcCmd &cmd) {
-    std::ostringstream ofs;
-    boost::archive::text_oarchive oa(ofs);
-    oa << cmd;
-    zmq_msg_t msg;
-    zmq_msg_init_size(&msg, ofs.str().length());
-    memcpy(zmq_msg_data(&msg), ofs.str().c_str(), ofs.str().length());
-    int size = zmq_msg_send(&msg, requester_, 0);
-    zmq_msg_close(&msg);
+    SERIALIZE_CFG(cmd);
+
+    const std::string &content = ofs.str();
+    int size = SendMessage(requester_, content.c_str(), 0);
+
     if (size == -1) {
         return SEND_CMD_FAIL;
     }
@@ -127,4 +130,39 @@ int Controller::CommonCommand(const PlcCmd &cmd) {
     } else {
         return SEND_CMD_SUCCESS;
     }
+}
+
+
+
+int Controller::PubGasCfg(int layer, const GasCfg &gas_cfg) {
+   SERIALIZE_CFG(gas_cfg);
+   return PubCfg("GAS", layer, ofs);
+}
+
+int Controller::PubLhcCfg(int layer, const FollowerCfg &lhc_cfg) {
+   SERIALIZE_CFG(lhc_cfg);
+   return PubCfg("LHC", layer, ofs);
+}
+
+int Controller::PubCfg(const char *device, int layer, const std::ostringstream &ofs) {
+   SendMessage(publisher_, device, ZMQ_SNDMORE);
+
+   char buf[10] = {0};
+   sprintf(buf, "%d", layer);
+   SendMessage(publisher_, buf, ZMQ_SNDMORE);
+
+   const std::string &content = ofs.str();
+   SendMessage(publisher_, content.c_str(), 0);
+
+   return 0;
+}
+
+int Controller::SendMessage(void *socket, const char *content, int flags) {
+   zmq_msg_t msg;
+   zmq_msg_init_size(&msg, strlen(content));
+   memcpy(zmq_msg_data(&msg), content, strlen(content));
+   int size = zmq_msg_send(&msg, socket, flags);
+   assert(size >= 0);
+   zmq_msg_close(&msg);
+   return size;
 }

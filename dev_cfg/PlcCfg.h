@@ -16,7 +16,9 @@
 //      LHC_PROGRESSIVE_FIRST
 //
 
-#define CRAFT_LAYERS 18
+#define CRAFT_LAYERS 20 
+#define STRIPING_LAYER_INDEX 18
+#define COOLING_LAYER_INDEX 19
 
 #define CRAFT_LEVELS 4
 
@@ -140,7 +142,17 @@ struct PlcCmd {
   std::string args;
 };
 
-
+struct ProcessCfg {
+  bool no_lift;
+  bool keep_air;
+  bool no_follow;
+  bool skip;
+  bool striping;
+  bool pre_pierce;
+  int cutting;
+  bool cooling;
+  int craft_level;
+};
 
 class PlcCfg {
  public:
@@ -148,7 +160,7 @@ class PlcCfg {
   std::vector<PlcCmd> pierce1_;
   std::vector<PlcCmd> pierce2_;
   std::vector<PlcCmd> pierce3_;
-  std::vector<PlcCmd> stripping_;
+  std::vector<PlcCmd> striping_;
   std::vector<PlcCmd> cooling_;
   std::vector<PlcCmd> laser_off_;
   std::vector<PlcCmd> laser_off_short_;
@@ -179,8 +191,8 @@ class PlcCfg {
 
       std::cout << it->cmd_id << ":" << it->args << std::endl;\
     }
-    for (std::vector<PlcCmd>::iterator it = stripping_.begin();
-        it != stripping_.end(); it++) { 
+    for (std::vector<PlcCmd>::iterator it = striping_.begin();
+        it != striping_.end(); it++) { 
 
       std::cout << it->cmd_id << ":" << it->args << std::endl;\
     }
@@ -207,12 +219,25 @@ void serialize(Archive &ar, PlcCmd &cfg, const unsigned int version) {
 }
 
 template <class Archive>
+void serialize(Archive &ar, ProcessCfg &cfg, const unsigned int version) {
+  ar & cfg.no_lift;
+  ar & cfg.keep_air;
+  ar & cfg.no_follow;
+  ar & cfg.skip;
+  ar & cfg.striping;
+  ar & cfg.pre_pierce;
+  ar & cfg.cutting;
+  ar & cfg.cooling;
+  ar & cfg.craft_level;
+}
+
+template <class Archive>
 void serialize(Archive &ar, PlcCfg &cfg, const unsigned int version) {
   ar & cfg.cutting_;
   ar & cfg.pierce1_;
   ar & cfg.pierce2_;
   ar & cfg.pierce3_;
-  ar & cfg.stripping_;
+  ar & cfg.striping_;
   ar & cfg.cooling_;
   ar & cfg.laser_off_;
   ar & cfg.laser_off_short_;

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>568</width>
-    <height>493</height>
+    <height>594</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,9 +15,9 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QStackedWidget" name="stackedWidget">
+    <widget class="QStackedWidget" name="container_">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="processing_">
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -96,10 +96,25 @@
      </widget>
      <widget class="QWidget" name="craft_params_">
       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <item>
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="layer1_">
           <attribute name="title">
@@ -130,6 +145,26 @@
           <attribute name="title">
            <string>layer2</string>
           </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="LayerCfg" name="layer2_data_" native="true"/>
+           </item>
+          </layout>
          </widget>
         </widget>
        </item>
@@ -138,6 +173,72 @@
      <widget class="QWidget" name="page_2"/>
      <widget class="QWidget" name="page_3"/>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QPushButton" name="process_pb_">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 85, 0);
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+padding: 6px;
+selection-color: rgb(255, 255, 0);
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>Process</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="layers_pb_">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 85, 0);
+border: 8px;
+border-radius: 8px;
+padding: 8px 8px;
+font: 57 italic 20pt &quot;Ubuntu&quot;;</string>
+       </property>
+       <property name="text">
+        <string>Layers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
@@ -178,8 +279,8 @@
    <slot>onStart()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>143</x>
-     <y>42</y>
+     <x>36</x>
+     <y>22</y>
     </hint>
     <hint type="destinationlabel">
      <x>1</x>
@@ -194,8 +295,8 @@
    <slot>onResume()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>229</x>
-     <y>34</y>
+     <x>55</x>
+     <y>22</y>
     </hint>
     <hint type="destinationlabel">
      <x>3</x>
@@ -210,11 +311,11 @@
    <slot>onPause()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>320</x>
-     <y>36</y>
+     <x>73</x>
+     <y>22</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-7</x>
+     <x>0</x>
      <y>173</y>
     </hint>
    </hints>
@@ -226,12 +327,44 @@
    <slot>onStop()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>420</x>
-     <y>34</y>
+     <x>92</x>
+     <y>22</y>
     </hint>
     <hint type="destinationlabel">
-     <x>-7</x>
+     <x>0</x>
      <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>process_pb_</sender>
+   <signal>clicked()</signal>
+   <receiver>CutterMainPage</receiver>
+   <slot>switchToProcess()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>559</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>499</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>layers_pb_</sender>
+   <signal>clicked()</signal>
+   <receiver>CutterMainPage</receiver>
+   <slot>switchToLayers()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>146</x>
+     <y>557</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-6</x>
+     <y>448</y>
     </hint>
    </hints>
   </connection>
@@ -243,5 +376,7 @@
   <slot>onResume()</slot>
   <slot>onPause()</slot>
   <slot>onStop()</slot>
+  <slot>switchToProcess()</slot>
+  <slot>switchToLayers()</slot>
  </slots>
 </ui>

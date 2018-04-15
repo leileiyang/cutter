@@ -7,6 +7,7 @@
 #include "dev_cfg/LaserCfg.h"
 #include "dev_cfg/FollowerCfg.h"
 #include "dev_cfg/DelayCfg.h"
+#include "dev_cfg/PlcCfg.h"
 
 #include "controller.h"
 
@@ -32,12 +33,17 @@ public slots:
     void onResume();
     void onPause();
 
+    // switch page
+    void switchToProcess();
+    void switchToLayers();
+
 private:
     Ui::CutterMainPage *ui;
 
     bool cfg_data_changed_;
     int current_layer_;
 
+    std::vector<ProcessCfg> process_cfg_;
     std::vector<GasCfg> gas_cfg_;
     std::vector<FollowerCfg> lhc_cfg_;
     std::vector<LaserCfg> laser_cfg_;

@@ -15,6 +15,14 @@ CraftParam::~CraftParam()
     delete ui;
 }
 
+void CraftParam::onDisable(bool disable) {
+    setDisabled(disable);
+}
+
+void CraftParam::onEnable(bool enable) {
+    setEnabled(enable);
+}
+
 void CraftParam::onDataUpdate() {
     data_.enable_incr = ui->enable_progressive_->isChecked();
     data_.incr_time = ui->progressive_time_->value();
@@ -49,5 +57,4 @@ void CraftParam::onDataUpdate(CraftData &data, bool dir) {
         ui->focus_->setValue(data_.focus);
         ui->stay_time_->setValue(data_.stay);
     }
-
 }

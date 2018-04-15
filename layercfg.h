@@ -3,16 +3,11 @@
 
 #include <QWidget>
 
+#include <vector>
+
 #include "dev_cfg/PlcCfg.h"
 
 struct CraftData;
-
-struct JobCfg {
-  int craft_level;
-  bool no_follow;
-  bool keep_air;
-  bool no_lift_;
-};
 
 namespace Ui {
 class LayerCfgForm;
@@ -26,11 +21,16 @@ public:
     explicit LayerCfg(QWidget *parent = 0);
     ~LayerCfg();
 
+    void InitProcessCfg(const ProcessCfg &process_cfg);
+    void InitLayerCfg(const ProcessCfg &process_cfg, \
+                      std::vector<CraftData> &datas);
+
 public slots:
     void onCuttingUpdate();
     void onPierce1Update();
     void onPierce2Update();
     void onPierce3Update();
+    void onProcessUpdate();
 signals:
     /* may be used in the future
     void gasCfgChanged();
@@ -41,9 +41,13 @@ signals:
     */
 
     void craftUpdate(int level, const CraftData &data);
+    void processUpdate(const ProcessCfg &process_cfg);
 
 private:
     Ui::LayerCfgForm *ui;
+
+    ProcessCfg process_cfg_;
+
 };
 
 #endif // PLCCFG_H

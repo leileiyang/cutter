@@ -39,6 +39,8 @@ signals:
 
 public slots:
     void onDataUpdate();
+    void onDisable(bool disable);
+    void onEnable(bool enable);
 
 
 private:
