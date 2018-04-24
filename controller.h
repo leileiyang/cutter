@@ -23,6 +23,7 @@ public:
     Controller();
     ~Controller();
     bool Initialize();
+    int OpenFile(std::string file_name);
     int Start();
     int Pause();
     int Stop();

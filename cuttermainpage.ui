@@ -17,69 +17,11 @@
    <item>
     <widget class="QStackedWidget" name="container_">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="processing_">
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="start_pb_">
-           <property name="text">
-            <string>start</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="resume_pb_">
-           <property name="text">
-            <string>resume</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pause_pb_">
-           <property name="text">
-            <string>pause</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="stop_pb_">
-           <property name="text">
-            <string>stop</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="2" column="1">
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -87,10 +29,88 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>419</height>
+           <height>195</height>
           </size>
          </property>
         </spacer>
+       </item>
+       <item row="0" column="1">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>196</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="2">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>168</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="0">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>168</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="1">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="start_pb_">
+           <property name="text">
+            <string>start</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="stop_pb_">
+           <property name="text">
+            <string>stop</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="pause_pb_">
+           <property name="text">
+            <string>pause</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="resume_pb_">
+           <property name="text">
+            <string>resume</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="open_pb_">
+           <property name="text">
+            <string>open</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
@@ -279,8 +299,8 @@ font: 57 italic 20pt &quot;Ubuntu&quot;;</string>
    <slot>onStart()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>36</x>
-     <y>22</y>
+     <x>223</x>
+     <y>237</y>
     </hint>
     <hint type="destinationlabel">
      <x>1</x>
@@ -295,8 +315,8 @@ font: 57 italic 20pt &quot;Ubuntu&quot;;</string>
    <slot>onResume()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>55</x>
-     <y>22</y>
+     <x>333</x>
+     <y>270</y>
     </hint>
     <hint type="destinationlabel">
      <x>3</x>
@@ -311,8 +331,8 @@ font: 57 italic 20pt &quot;Ubuntu&quot;;</string>
    <slot>onPause()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>73</x>
-     <y>22</y>
+     <x>260</x>
+     <y>270</y>
     </hint>
     <hint type="destinationlabel">
      <x>0</x>
@@ -327,8 +347,8 @@ font: 57 italic 20pt &quot;Ubuntu&quot;;</string>
    <slot>onStop()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>92</x>
-     <y>22</y>
+     <x>370</x>
+     <y>237</y>
     </hint>
     <hint type="destinationlabel">
      <x>0</x>
@@ -368,6 +388,22 @@ font: 57 italic 20pt &quot;Ubuntu&quot;;</string>
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>open_pb_</sender>
+   <signal>clicked()</signal>
+   <receiver>CutterMainPage</receiver>
+   <slot>onOpen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>308</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>335</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onCfgDataChanged()</slot>
@@ -378,5 +414,6 @@ font: 57 italic 20pt &quot;Ubuntu&quot;;</string>
   <slot>onStop()</slot>
   <slot>switchToProcess()</slot>
   <slot>switchToLayers()</slot>
+  <slot>onOpen()</slot>
  </slots>
 </ui>

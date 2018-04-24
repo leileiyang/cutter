@@ -82,6 +82,10 @@ void CutterMainPage::switchToLayers() {
     ui->container_->setCurrentIndex(1);
 }
 
+void CutterMainPage::onOpen() {
+    controller_.OpenFile("/home/debian/linuxcnc/nc_files/examples/result.ngc");
+}
+
 void CutterMainPage::onStart() {
   controller_.AutoMode();
   controller_.Start();

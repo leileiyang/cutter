@@ -66,6 +66,13 @@ bool Controller::Initialize() {
     return true;
 }
 
+int Controller::OpenFile(std::string file_name) {
+    PlcCmd cmd;
+    cmd.cmd_id = TASK_OPEN_FILE;
+    cmd.args = file_name;
+    return CommonCommand(cmd);
+}
+
 int Controller::Start() {
     PlcCmd cmd = {TASK_START, ""};
     return CommonCommand(cmd);

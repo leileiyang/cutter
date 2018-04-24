@@ -28,6 +28,7 @@ public:
 public slots:
     void onPubCfgData(int index);
     void onCraftUpdate(int level, const CraftData &data);
+    void onOpen();
     void onStart();
     void onStop();
     void onResume();
