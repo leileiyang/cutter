@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<LaserParam>
+	<PlcParam>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+		<Layer>
+			<ProcessCfg no_lift="false" pre_pierce="false" striping="false" cooling="false" cutting="0" no_follow="false" keep_air="false" skip="false" craft_level="0" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+			<CraftData enable_incr="false" incr_time="300" lift="10" gas="0" pressure="10" power="1" ratio="1" frequency="50" focus="3" stay="3000" enable_blow="false" blow_time="3000" />
+		</Layer>
+	</PlcParam>
+	<Procedure>
+		<Cutting>
+			<PlcCmd CmdId="144" CmdArgs="" />
+			<PlcCmd CmdId="108" CmdArgs="" />
+			<PlcCmd CmdId="100" CmdArgs="" />
+			<PlcCmd CmdId="120" CmdArgs="" />
+			<PlcCmd CmdId="210" CmdArgs="" />
+			<PlcCmd CmdId="152" CmdArgs="" />
+			<PlcCmd CmdId="148" CmdArgs="" />
+			<PlcCmd CmdId="156" CmdArgs="" />
+			<PlcCmd CmdId="140" CmdArgs="" />
+			<PlcCmd CmdId="188" CmdArgs="" />
+		</Cutting>
+		<FirstPierce>
+			<PlcCmd CmdId="145" CmdArgs="" />
+			<PlcCmd CmdId="109" CmdArgs="" />
+			<PlcCmd CmdId="101" CmdArgs="" />
+			<PlcCmd CmdId="121" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="211" CmdArgs="" />
+			<PlcCmd CmdId="153" CmdArgs="" />
+			<PlcCmd CmdId="149" CmdArgs="" />
+			<PlcCmd CmdId="157" CmdArgs="" />
+			<PlcCmd CmdId="140" CmdArgs="" />
+			<PlcCmd CmdId="189" CmdArgs="" />
+			<PlcCmd CmdId="125" CmdArgs="" />
+			<PlcCmd CmdId="141" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="185" CmdArgs="" />
+		</FirstPierce>
+		<SecondPierce>
+			<PlcCmd CmdId="146" CmdArgs="" />
+			<PlcCmd CmdId="110" CmdArgs="" />
+			<PlcCmd CmdId="102" CmdArgs="" />
+			<PlcCmd CmdId="122" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="212" CmdArgs="" />
+			<PlcCmd CmdId="154" CmdArgs="" />
+			<PlcCmd CmdId="150" CmdArgs="" />
+			<PlcCmd CmdId="158" CmdArgs="" />
+			<PlcCmd CmdId="140" CmdArgs="" />
+			<PlcCmd CmdId="190" CmdArgs="" />
+			<PlcCmd CmdId="126" CmdArgs="" />
+			<PlcCmd CmdId="141" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="186" CmdArgs="" />
+			<PlcCmd CmdId="121" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="109" CmdArgs="" />
+			<PlcCmd CmdId="101" CmdArgs="" />
+			<PlcCmd CmdId="211" CmdArgs="" />
+			<PlcCmd CmdId="145" CmdArgs="" />
+			<PlcCmd CmdId="153" CmdArgs="" />
+			<PlcCmd CmdId="149" CmdArgs="" />
+			<PlcCmd CmdId="157" CmdArgs="" />
+			<PlcCmd CmdId="140" CmdArgs="" />
+			<PlcCmd CmdId="189" CmdArgs="" />
+			<PlcCmd CmdId="125" CmdArgs="" />
+			<PlcCmd CmdId="141" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="185" CmdArgs="" />
+		</SecondPierce>
+		<ThirdPierce>
+			<PlcCmd CmdId="147" CmdArgs="" />
+			<PlcCmd CmdId="111" CmdArgs="" />
+			<PlcCmd CmdId="103" CmdArgs="" />
+			<PlcCmd CmdId="123" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="213" CmdArgs="" />
+			<PlcCmd CmdId="155" CmdArgs="" />
+			<PlcCmd CmdId="151" CmdArgs="" />
+			<PlcCmd CmdId="159" CmdArgs="" />
+			<PlcCmd CmdId="140" CmdArgs="" />
+			<PlcCmd CmdId="191" CmdArgs="" />
+			<PlcCmd CmdId="127" CmdArgs="" />
+			<PlcCmd CmdId="141" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="187" CmdArgs="" />
+			<PlcCmd CmdId="122" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="110" CmdArgs="" />
+			<PlcCmd CmdId="102" CmdArgs="" />
+			<PlcCmd CmdId="212" CmdArgs="" />
+			<PlcCmd CmdId="146" CmdArgs="" />
+			<PlcCmd CmdId="154" CmdArgs="" />
+			<PlcCmd CmdId="150" CmdArgs="" />
+			<PlcCmd CmdId="158" CmdArgs="" />
+			<PlcCmd CmdId="140" CmdArgs="" />
+			<PlcCmd CmdId="190" CmdArgs="" />
+			<PlcCmd CmdId="126" CmdArgs="" />
+			<PlcCmd CmdId="141" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="186" CmdArgs="" />
+			<PlcCmd CmdId="121" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="109" CmdArgs="" />
+			<PlcCmd CmdId="101" CmdArgs="" />
+			<PlcCmd CmdId="211" CmdArgs="" />
+			<PlcCmd CmdId="145" CmdArgs="" />
+			<PlcCmd CmdId="153" CmdArgs="" />
+			<PlcCmd CmdId="149" CmdArgs="" />
+			<PlcCmd CmdId="157" CmdArgs="" />
+			<PlcCmd CmdId="140" CmdArgs="" />
+			<PlcCmd CmdId="189" CmdArgs="" />
+			<PlcCmd CmdId="125" CmdArgs="" />
+			<PlcCmd CmdId="141" CmdArgs="" />
+			<PlcCmd CmdId="129" CmdArgs="" />
+			<PlcCmd CmdId="185" CmdArgs="" />
+		</ThirdPierce>
+		<Striping>
+			<PlcCmd CmdId="144" CmdArgs="" />
+			<PlcCmd CmdId="108" CmdArgs="" />
+			<PlcCmd CmdId="100" CmdArgs="" />
+			<PlcCmd CmdId="120" CmdArgs="" />
+			<PlcCmd CmdId="210" CmdArgs="" />
+			<PlcCmd CmdId="152" CmdArgs="" />
+			<PlcCmd CmdId="148" CmdArgs="" />
+			<PlcCmd CmdId="156" CmdArgs="" />
+			<PlcCmd CmdId="140" CmdArgs="" />
+			<PlcCmd CmdId="188" CmdArgs="" />
+		</Striping>
+		<Cooling>
+			<PlcCmd CmdId="108" CmdArgs="" />
+			<PlcCmd CmdId="100" CmdArgs="" />
+			<PlcCmd CmdId="120" CmdArgs="" />
+			<PlcCmd CmdId="188" CmdArgs="" />
+		</Cooling>
+		<LaserOff>
+			<PlcCmd CmdId="184" CmdArgs="" />
+			<PlcCmd CmdId="141" CmdArgs="" />
+			<PlcCmd CmdId="104" CmdArgs="" />
+			<PlcCmd CmdId="128" CmdArgs="" />
+		</LaserOff>
+		<LaserOffShort>
+			<PlcCmd CmdId="184" CmdArgs="" />
+			<PlcCmd CmdId="141" CmdArgs="" />
+		</LaserOffShort>
+	</Procedure>
+</LaserParam>
