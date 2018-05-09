@@ -63,7 +63,7 @@ LayerCfg::~LayerCfg()
          break;
      case CRAFT_CUTTING:
      default:
-         ui->no_follow_chb_->setChecked(true);
+         ui->no_pierce_rb_->setChecked(true);
          break;
      }
  }

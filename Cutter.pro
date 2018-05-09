@@ -15,21 +15,26 @@ TEMPLATE = app
 SOURCES += main.cpp\
         cuttermainpage.cpp \
     craftparam.cpp \
-    dev_cfg/DeviceCfg.cpp \
     layercfg.cpp \
-    controller.cpp
+    controller.cpp \
+    xmlparser/LaserXmlParser.cpp \
+    xmlparser/pugixml.cpp \
+    xmlparser/XmlParser.cpp
 
 HEADERS  += cuttermainpage.h \
     craftparam.h \
     dev_cfg/DelayCfg.h \
-    dev_cfg/DeviceCfg.h \
     dev_cfg/FollowerCfg.h \
     dev_cfg/GasCfg.h \
     dev_cfg/IOCfg.h \
     dev_cfg/LaserCfg.h \
     dev_cfg/PlcCfg.h \
     layercfg.h \
-    controller.h
+    controller.h \
+    xmlparser/LaserXmlParser.h \
+    xmlparser/pugiconfig.hpp \
+    xmlparser/pugixml.hpp \
+    xmlparser/XmlParser.h
 
 FORMS    += cuttermainpage.ui \
     craftparam.ui \

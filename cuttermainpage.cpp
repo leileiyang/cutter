@@ -21,7 +21,7 @@ const static int kGasMap[] = {
 CutterMainPage::CutterMainPage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CutterMainPage),
-    cfg_data_changed_(false),
+    layer_data_changed_(false),
     current_layer_(-1),
     process_cfg_(CRAFT_LAYERS, ProcessCfg()),
     gas_cfg_(CRAFT_LAYERS, GasCfg()),
@@ -32,10 +32,39 @@ CutterMainPage::CutterMainPage(QWidget *parent) :
     ui->setupUi(this);
 
     current_layer_ = ui->tabWidget->currentIndex();
-    connect(ui->layer1_data_, SIGNAL(craftUpdate(int,CraftData)), this,
-            SLOT(onCraftUpdate(int,CraftData)));
+
+#define CONNECT_LAYERDATA_UPATE(SENDER) \
+    connect(SENDER, SIGNAL(craftUpdate(int,CraftData)), this, \
+            SLOT(onCraftUpdate(int,CraftData))); \
+\
+    connect(SENDER, SIGNAL(processUpdate(ProcessCfg)), this, \
+            SLOT(onProcessCfgUpdate(ProcessCfg))); \
+
+   CONNECT_LAYERDATA_UPATE(ui->layer0_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer1_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer2_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer3_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer4_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer5_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer6_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer7_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer8_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer9_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer10_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer11_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer12_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer13_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer14_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer15_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer16_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer17_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer18_data_)
+   CONNECT_LAYERDATA_UPATE(ui->layer19_data_)
 
    controller_.Initialize();
+   if (xml_parser_.ParseXml("laser_param.xml")) {
+       ;
+   }
 }
 
 CutterMainPage::~CutterMainPage()
@@ -44,11 +73,23 @@ CutterMainPage::~CutterMainPage()
 }
 
 void CutterMainPage::onPubCfgData(int index) {
-    if (cfg_data_changed_) {
-        cfg_data_changed_ = false;
+    if (layer_data_changed_) {
+        layer_data_changed_ = false;
         // publish cfg data
     }
     current_layer_ = index;
+}
+
+void CutterMainPage::onProcessCfgUpdate(const ProcessCfg &data) {
+    process_cfg_[current_layer_].no_lift = data.no_lift;
+    process_cfg_[current_layer_].no_follow = data.no_follow;
+    process_cfg_[current_layer_].skip = data.skip;
+    process_cfg_[current_layer_].keep_air = data.keep_air;
+    process_cfg_[current_layer_].pre_pierce = data.pre_pierce;
+    process_cfg_[current_layer_].striping = data.striping;
+    process_cfg_[current_layer_].cooling = data.cooling;
+    process_cfg_[current_layer_].cutting = data.cutting;
+    process_cfg_[current_layer_].craft_level = data.craft_level;
 }
 
 void CutterMainPage::onCraftUpdate(int level, const CraftData &data) {
@@ -59,7 +100,7 @@ void CutterMainPage::onCraftUpdate(int level, const CraftData &data) {
 
     lhc_cfg_[current_layer_].incr_enable_[level] = data.enable_incr;
     lhc_cfg_[current_layer_].incr_time_[level] = data.incr_time;
-    lhc_cfg_[current_layer_].height_[level] = data.height;
+    lhc_cfg_[current_layer_].height_[level] = data.lift_height;
 
     laser_cfg_[current_layer_].peak_power_[level] = data.power;
     laser_cfg_[current_layer_].duty_ratio_[level] = data.ratio;
@@ -67,9 +108,9 @@ void CutterMainPage::onCraftUpdate(int level, const CraftData &data) {
 
     delay_cfg_[current_layer_].stay_[level] = data.stay;
     delay_cfg_[current_layer_].blow_enable_[level] = data.enable_blow;
-    delay_cfg_[current_layer_].laser_off_blow_[level] = data.blow_time;
+    delay_cfg_[current_layer_].laser_off_blow_time_[level] = data.blow_time;
 
-    cfg_data_changed_ = true;
+    layer_data_changed_ = true;
 
 }
 
@@ -80,6 +121,35 @@ void CutterMainPage::switchToProcess() {
 
 void CutterMainPage::switchToLayers() {
     ui->container_->setCurrentIndex(1);
+    // Init layers cata
+    ProcessCfg process;
+    std::vector<CraftData> craftdata;
+
+#define LOAD_LAYER_DATA(NO) do { \
+    xml_parser_.GetLayerData(NO, process, craftdata); \
+    ui->layer##NO##_data_->InitLayerCfg(process, craftdata); \
+} while (0)
+
+    LOAD_LAYER_DATA(0);
+    LOAD_LAYER_DATA(1);
+    LOAD_LAYER_DATA(2);
+    LOAD_LAYER_DATA(3);
+    LOAD_LAYER_DATA(4);
+    LOAD_LAYER_DATA(5);
+    LOAD_LAYER_DATA(6);
+    LOAD_LAYER_DATA(7);
+    LOAD_LAYER_DATA(8);
+    LOAD_LAYER_DATA(9);
+    LOAD_LAYER_DATA(10);
+    LOAD_LAYER_DATA(11);
+    LOAD_LAYER_DATA(12);
+    LOAD_LAYER_DATA(13);
+    LOAD_LAYER_DATA(14);
+    LOAD_LAYER_DATA(15);
+    LOAD_LAYER_DATA(16);
+    LOAD_LAYER_DATA(17);
+    LOAD_LAYER_DATA(18);
+    LOAD_LAYER_DATA(19);
 }
 
 void CutterMainPage::onOpen() {

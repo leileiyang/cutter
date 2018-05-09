@@ -484,11 +484,156 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pre_pierce_chb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>109</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>189</x>
+     <y>40</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>striping_chb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>263</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cooling_chb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>327</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>344</x>
+     <y>41</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cutting_chb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>391</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>475</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cutting_spb_</sender>
+   <signal>editingFinished()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>472</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>431</x>
+     <y>6</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>keep_air_chb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>502</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>576</x>
+     <y>41</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>no_follow_chb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>592</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>625</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>skip_chb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>686</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>734</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>no_lift_chb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>22</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>68</x>
+     <y>42</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onCuttingUpdate()</slot>
   <slot>onPierce1Update()</slot>
   <slot>onPierce2Update()</slot>
   <slot>onPierce3Update()</slot>
+  <slot>onProcessUpdate()</slot>
  </slots>
 </ui>

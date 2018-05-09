@@ -17,7 +17,7 @@
    <item>
     <widget class="QStackedWidget" name="container_">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="processing_">
       <layout class="QGridLayout" name="gridLayout_2">
@@ -134,7 +134,7 @@
        <item>
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
-          <number>1</number>
+          <number>19</number>
          </property>
          <widget class="QWidget" name="layer1_">
           <attribute name="title">
@@ -157,7 +157,7 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="LayerCfg" name="layer1_data_" native="true"/>
+            <widget class="LayerCfg" name="layer0_data_" native="true"/>
            </item>
           </layout>
          </widget>
@@ -182,7 +182,187 @@
             <number>0</number>
            </property>
            <item>
+            <widget class="LayerCfg" name="layer1_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="layer3_">
+          <attribute name="title">
+           <string>layer3</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
             <widget class="LayerCfg" name="layer2_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab">
+          <attribute name="title">
+           <string>layer4</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="LayerCfg" name="layer3_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_2">
+          <attribute name="title">
+           <string>layer5</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="LayerCfg" name="layer4_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_3">
+          <attribute name="title">
+           <string>layer6</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="LayerCfg" name="layer5_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_4">
+          <attribute name="title">
+           <string>layer7</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="LayerCfg" name="layer6_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_5">
+          <attribute name="title">
+           <string>layer8</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="LayerCfg" name="layer7_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_6">
+          <attribute name="title">
+           <string>layer9</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <item>
+            <widget class="LayerCfg" name="layer8_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_7">
+          <attribute name="title">
+           <string>layer10</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <widget class="LayerCfg" name="layer9_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_8">
+          <attribute name="title">
+           <string>layer11</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="LayerCfg" name="layer10_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_9">
+          <attribute name="title">
+           <string>layer12</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_11">
+           <item>
+            <widget class="LayerCfg" name="layer11_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_10">
+          <attribute name="title">
+           <string>layer13</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <item>
+            <widget class="LayerCfg" name="layer12_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_11">
+          <attribute name="title">
+           <string>layer14</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <item>
+            <widget class="LayerCfg" name="layer13_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_12">
+          <attribute name="title">
+           <string>layer15</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_14">
+           <item>
+            <widget class="LayerCfg" name="layer14_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_13">
+          <attribute name="title">
+           <string>layer16</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_15">
+           <item>
+            <widget class="LayerCfg" name="layer15_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_14">
+          <attribute name="title">
+           <string>layer17</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_16">
+           <item>
+            <widget class="LayerCfg" name="layer16_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_15">
+          <attribute name="title">
+           <string>layer18</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_17">
+           <item>
+            <widget class="LayerCfg" name="layer17_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_16">
+          <attribute name="title">
+           <string>layer19</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_18">
+           <item>
+            <widget class="LayerCfg" name="layer18_data_" native="true"/>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_17">
+          <attribute name="title">
+           <string>layer20</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_19">
+           <item>
+            <widget class="LayerCfg" name="layer19_data_" native="true"/>
            </item>
           </layout>
          </widget>

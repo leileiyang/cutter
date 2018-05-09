@@ -3,24 +3,11 @@
 
 #include <QWidget>
 
+#include "xmlparser/LaserXmlParser.h"
+
 namespace Ui {
 class CraftParam;
 }
-
-struct CraftData {
-    bool enable_incr;
-    double incr_time;
-    int gas;
-    double pressure;
-    double height;
-    double power;
-    double ratio;
-    double frequency;
-    double focus;
-    double stay;
-    bool enable_blow;
-    double blow_time;
-};
 
 class CraftParam : public QWidget
 {

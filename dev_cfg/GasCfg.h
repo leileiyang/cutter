@@ -10,7 +10,7 @@
 
 class GasCfg {
  public:
-  GasCfg(): gas_(CRAFT_LEVELS, VACUO), pressure_(CRAFT_LEVELS, 0.){}
+  GasCfg(): gas_(CRAFT_LEVELS, 0), pressure_(CRAFT_LEVELS, 0.){}
 
   std::vector<int> gas_;
   std::vector<double> pressure_;
