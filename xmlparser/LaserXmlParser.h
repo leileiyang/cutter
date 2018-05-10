@@ -12,7 +12,7 @@ struct CraftData {
   double incr_time;
   int gas;
   double pressure;
-  double lift_height;
+  double jet_height;
   double power;
   double ratio;
   double frequency;

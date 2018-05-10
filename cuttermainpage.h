@@ -26,6 +26,8 @@ public:
     explicit CutterMainPage(QWidget *parent = 0);
     ~CutterMainPage();
 
+    bool Initialize();
+
 public slots:
     void onPubCfgData(int index);
     void onCraftUpdate(int level, const CraftData &data);
@@ -43,6 +45,8 @@ public slots:
 
 private:
     Ui::CutterMainPage *ui;
+
+    void LoadLayersData();
 
     bool layer_data_changed_;
     int current_layer_;

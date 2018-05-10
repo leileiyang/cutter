@@ -28,7 +28,7 @@ void CraftParam::onDataUpdate() {
     data_.incr_time = ui->progressive_time_->value();
     data_.gas = ui->gas_type_->currentIndex();
     data_.pressure = ui->pressure_->value();
-    data_.lift_height = ui->height_->value();
+    data_.jet_height = ui->height_->value();
     data_.power = ui->power_->value();
     data_.ratio = ui->ratio_->value();
     data_.frequency = ui->frequency_->value();
@@ -48,7 +48,7 @@ void CraftParam::onDataUpdate(CraftData &data, bool dir) {
         ui->progressive_time_->setValue(data_.incr_time);
         ui->gas_type_->setCurrentIndex(data_.gas);
         ui->pressure_->setValue(data_.pressure);
-        ui->height_->setValue(data_.lift_height);
+        ui->height_->setValue(data_.jet_height);
         ui->power_->setValue(data_.power);
         ui->ratio_->setValue(data_.ratio);
         ui->frequency_->setValue(data.frequency);

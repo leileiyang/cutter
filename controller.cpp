@@ -52,7 +52,7 @@ bool Controller::Initialize() {
     publisher_ = zmq_socket(context_, ZMQ_PUB);
     ack_subscriber_ = zmq_socket(context_, ZMQ_REP);
 
-    zmq_bind(publisher_, "tcp:://*:6001");
+    zmq_bind(publisher_, "tcp://*:6001");
     zmq_bind(ack_subscriber_, "tcp://*:6000");
 
     if (!context_ || !requester_ || !publisher_ || !ack_subscriber_) {

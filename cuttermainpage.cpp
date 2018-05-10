@@ -61,10 +61,6 @@ CutterMainPage::CutterMainPage(QWidget *parent) :
    CONNECT_LAYERDATA_UPATE(ui->layer18_data_)
    CONNECT_LAYERDATA_UPATE(ui->layer19_data_)
 
-   controller_.Initialize();
-   if (xml_parser_.ParseXml("laser_param.xml")) {
-       ;
-   }
 }
 
 CutterMainPage::~CutterMainPage()
@@ -72,10 +68,25 @@ CutterMainPage::~CutterMainPage()
     delete ui;
 }
 
+bool CutterMainPage::Initialize() {
+   if (controller_.Initialize()) {
+      if (!controller_.PreparePubData()) {
+        return false;
+      }
+   }
+   if (xml_parser_.ParseXml("laser_param.xml")) {
+     LoadLayersData();
+     return true;
+   }
+   return false;
+}
+
 void CutterMainPage::onPubCfgData(int index) {
     if (layer_data_changed_) {
         layer_data_changed_ = false;
         // publish cfg data
+        controller_.PubGasCfg(current_layer_, gas_cfg_[current_layer_]);
+        controller_.PubLhcCfg(current_layer_, lhc_cfg_[current_layer_]);
     }
     current_layer_ = index;
 }
@@ -102,7 +113,7 @@ void CutterMainPage::onCraftUpdate(int level, const CraftData &data) {
 
     lhc_cfg_[current_layer_].incr_enable_[level] = data.enable_incr;
     lhc_cfg_[current_layer_].incr_time_[level] = data.incr_time;
-    lhc_cfg_[current_layer_].height_[level] = data.lift_height;
+    lhc_cfg_[current_layer_].height_[level] = data.jet_height;
 
     laser_cfg_[current_layer_].peak_power_[level] = data.power;
     laser_cfg_[current_layer_].duty_ratio_[level] = data.ratio;
@@ -123,7 +134,11 @@ void CutterMainPage::switchToProcess() {
 
 void CutterMainPage::switchToLayers() {
     ui->container_->setCurrentIndex(1);
-    // Init layers cata
+    LoadLayersData();
+}
+
+void CutterMainPage::LoadLayersData() {
+     // Init layers cata
     ProcessCfg process;
     std::vector<CraftData> craftdata;
 

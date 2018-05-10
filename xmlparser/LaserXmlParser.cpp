@@ -19,6 +19,7 @@ bool LaserXmlParser::AddLayerNodes(int num) {
 bool LaserXmlParser::AddLayerContents(pugi::xml_node layer_node) {
   AddProcessCfgNode(layer_node);
   AddCraftDataNodes(CRAFT_LEVELS, layer_node);
+  return true;
 }
 
 bool LaserXmlParser::AddProcessCfgNode(pugi::xml_node parent_node) {
@@ -40,6 +41,7 @@ bool LaserXmlParser::AddProcessCfgAttributes(pugi::xml_node processcfg_node) {
   processcfg_node.append_attribute("keep_air") = "false";
   processcfg_node.append_attribute("skip") = "false";
   processcfg_node.append_attribute("craft_level") = 0;
+  return true;
 }
 
 bool LaserXmlParser::AddCraftDataNodes(int num, pugi::xml_node parent_node) {
@@ -56,7 +58,7 @@ bool LaserXmlParser::AddCraftDataNodes(int num, pugi::xml_node parent_node) {
 bool LaserXmlParser::AddCraftDataAttributes(pugi::xml_node craftdata_node) {
   craftdata_node.append_attribute("enable_incr") = "false";
   craftdata_node.append_attribute("incr_time") = 300;
-  craftdata_node.append_attribute("lift") = 10;
+  craftdata_node.append_attribute("jet_height") = 10;
   craftdata_node.append_attribute("gas") = 0;
   craftdata_node.append_attribute("pressure") = 10;
   craftdata_node.append_attribute("power") = 1;
@@ -94,7 +96,7 @@ void LaserXmlParser::LayerNodeComplement(pugi::xml_node layer_node) {
 void LaserXmlParser::LayerNodesComplement(\
     pugi::xpath_node_set layer_nodes) {
 
-  for (int i = 0; i < layer_nodes.size(); i++) {
+  for (unsigned int i = 0; i < layer_nodes.size(); i++) {
     LayerNodeComplement(layer_nodes[i].node());
   }
 }
@@ -102,7 +104,7 @@ void LaserXmlParser::LayerNodesComplement(\
 void LaserXmlParser::CraftDataAttributesComplement(\
     pugi::xpath_node_set craftdata_nodes) {
 
-  for (int i = 0; i < craftdata_nodes.size(); i++) {
+  for (unsigned int i = 0; i < craftdata_nodes.size(); i++) {
     CraftDataAttributesComplement(craftdata_nodes[i].node());
   }
 }
@@ -135,7 +137,7 @@ void LaserXmlParser::CraftDataAttributesComplement(\
   pugi::xml_attribute attr = pugi::xml_attribute();
   AddIfNotExist("enable_incr", "false");
   AddIfNotExist("incr_time", 300);
-  AddIfNotExist("lift", 10);
+  AddIfNotExist("jet_height", 10);
   AddIfNotExist("gas", 0);
   AddIfNotExist("pressure", 10);
   AddIfNotExist("power", 1);
@@ -364,7 +366,7 @@ bool LaserXmlParser::GetLayerData(int layer, ProcessCfg &process,
     std::vector<CraftData> &craft_data) {
 
   pugi::xpath_node_set layer_nodes = SelectNodes("LaserParam/PlcParam/Layer");
-  assert(layer < layer_nodes.size());
+  assert((unsigned int)layer < layer_nodes.size());
   pugi::xml_node process_node = layer_nodes[layer].node().child("ProcessCfg");  
   if (process_node) {
     process.no_lift = process_node.attribute("no_lift").as_bool();
@@ -386,7 +388,7 @@ bool LaserXmlParser::GetLayerData(int layer, ProcessCfg &process,
       CraftData craftdata;
       craftdata.enable_incr = node.attribute("enable_incr").as_bool();
       craftdata.incr_time = node.attribute("incr_time").as_double();
-      craftdata.lift_height = node.attribute("lift").as_double();
+      craftdata.jet_height = node.attribute("jet_height").as_double();
       craftdata.gas = node.attribute("gas").as_int();
       craftdata.pressure = node.attribute("pressure").as_double();
       craftdata.power = node.attribute("power").as_double();
@@ -400,4 +402,5 @@ bool LaserXmlParser::GetLayerData(int layer, ProcessCfg &process,
     }
   }
   assert(craft_data.size() == CRAFT_LEVELS);
+  return true;
 }
