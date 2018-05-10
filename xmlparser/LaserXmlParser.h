@@ -19,7 +19,7 @@ struct CraftData {
   double focus;
   double stay;
   bool enable_blow;
-  bool blow_time;
+  double blow_time;
 };
 
 class LaserXmlParser: public XmlParser {

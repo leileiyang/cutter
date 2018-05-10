@@ -395,7 +395,7 @@ bool LaserXmlParser::GetLayerData(int layer, ProcessCfg &process,
       craftdata.focus = node.attribute("focus").as_double();
       craftdata.stay = node.attribute("stay").as_double();
       craftdata.enable_blow = node.attribute("enable_blow").as_bool();
-      craftdata.blow_time = node.attribute("blow_time").as_bool();
+      craftdata.blow_time = node.attribute("blow_time").as_double();
       craft_data.push_back(craftdata);
     }
   }
