@@ -90,6 +90,8 @@ void CutterMainPage::onProcessCfgUpdate(const ProcessCfg &data) {
     process_cfg_[current_layer_].cooling = data.cooling;
     process_cfg_[current_layer_].cutting = data.cutting;
     process_cfg_[current_layer_].craft_level = data.craft_level;
+
+    layer_data_changed_ = true;
 }
 
 void CutterMainPage::onCraftUpdate(int level, const CraftData &data) {

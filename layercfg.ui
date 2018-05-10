@@ -628,6 +628,70 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>no_pierce_rb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>93</x>
+     <y>95</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>98</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pierce1_rb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>89</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>63</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pierce2_rb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>206</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>246</x>
+     <y>-5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pierce3_rb_</sender>
+   <signal>clicked()</signal>
+   <receiver>LayerCfgForm</receiver>
+   <slot>onProcessUpdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>366</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onCuttingUpdate()</slot>
