@@ -46,7 +46,11 @@ public slots:
 private:
     Ui::CutterMainPage *ui;
 
+    void LoadDeviceCfg();
     void LoadLayersData();
+    void CraftDataToDeviceCfg(int layer, const std::vector<CraftData> &craftdatas);
+    void CraftDataToDeviceCfg(int layer, int craft_level, const CraftData &craftdata);
+    std::vector<CraftData> DeviceCfgToCrafData(int layer);
 
     bool layer_data_changed_;
     int current_layer_;

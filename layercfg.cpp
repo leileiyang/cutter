@@ -69,14 +69,14 @@ LayerCfg::~LayerCfg()
  }
 
  void LayerCfg::InitLayerCfg(const ProcessCfg &process_cfg, \
-                      std::vector<CraftData> &datas) {
+     const std::vector<CraftData> &datas) {
 
      assert(datas.size() == 4);
      InitProcessCfg(process_cfg);
-     ui->cutting1_->onDataUpdate(datas[CRAFT_CUTTING], false);
-     ui->pierce1_->onDataUpdate(datas[CRAFT_FIRST], false);
-     ui->pierce2_->onDataUpdate(datas[CRAFT_SECOND], false);
-     ui->pierce3_->onDataUpdate(datas[CRAFT_THIRD], false);
+     ui->cutting1_->onDataUpdate(const_cast<CraftData &>(datas[CRAFT_CUTTING]), false);
+     ui->pierce1_->onDataUpdate(const_cast<CraftData &>(datas[CRAFT_FIRST]), false);
+     ui->pierce2_->onDataUpdate(const_cast<CraftData &>(datas[CRAFT_SECOND]), false);
+     ui->pierce3_->onDataUpdate(const_cast<CraftData &>(datas[CRAFT_THIRD]), false);
  }
 
  void LayerCfg::onProcessUpdate() {

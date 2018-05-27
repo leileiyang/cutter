@@ -23,7 +23,7 @@ public:
 
     void InitProcessCfg(const ProcessCfg &process_cfg);
     void InitLayerCfg(const ProcessCfg &process_cfg, \
-                      std::vector<CraftData> &datas);
+                      const std::vector<CraftData> &datas);
 
 public slots:
     void onCuttingUpdate();

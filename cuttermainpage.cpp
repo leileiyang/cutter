@@ -71,14 +71,99 @@ CutterMainPage::~CutterMainPage()
 bool CutterMainPage::Initialize() {
    if (controller_.Initialize()) {
       if (!controller_.PreparePubData()) {
-        return false;
+        //return false;
       }
    }
    if (xml_parser_.ParseXml("laser_param.xml")) {
+     LoadDeviceCfg();
      LoadLayersData();
      return true;
    }
    return false;
+}
+
+void CutterMainPage::LoadDeviceCfg() {
+    std::vector<CraftData> craftdatas;
+    for (int i = 0; i < CRAFT_LAYERS; i++) {
+      xml_parser_.GetLayerData(i, process_cfg_[i], craftdatas);
+      CraftDataToDeviceCfg(i,craftdatas);
+    }
+}
+
+void CutterMainPage::CraftDataToDeviceCfg(int layer,
+    const std::vector<CraftData> &craftdatas) {
+
+  for(unsigned int i = 0; i < craftdatas.size(); i++) {
+    CraftDataToDeviceCfg(layer, i, craftdatas[i]);
+  }
+}
+
+void CutterMainPage::CraftDataToDeviceCfg(int layer, int craft_level,
+    const CraftData &craftdata) {
+
+    assert(craft_level < CRAFT_LEVELS);
+
+    gas_cfg_[layer].gas_[craft_level] = kGasMap[craftdata.gas];
+    gas_cfg_[layer].pressure_[craft_level] = craftdata.pressure;
+
+    lhc_cfg_[layer].incr_enable_[craft_level] = craftdata.enable_incr;
+    lhc_cfg_[layer].incr_time_[craft_level] = craftdata.incr_time;
+    lhc_cfg_[layer].height_[craft_level] = craftdata.jet_height;
+
+    laser_cfg_[layer].peak_power_[craft_level] = craftdata.power;
+    laser_cfg_[layer].duty_ratio_[craft_level] = craftdata.ratio;
+    laser_cfg_[layer].pulse_frequency_[craft_level] = craftdata.frequency;
+
+    delay_cfg_[layer].stay_[craft_level] = craftdata.stay;
+    delay_cfg_[layer].blow_enable_[craft_level] = craftdata.enable_blow;
+    delay_cfg_[layer].laser_off_blow_time_[craft_level] = craftdata.blow_time;
+}
+
+void CutterMainPage::LoadLayersData() {
+    // Init layers cata
+    ui->layer0_data_->InitLayerCfg(process_cfg_[0], DeviceCfgToCrafData(0));
+    ui->layer1_data_->InitLayerCfg(process_cfg_[1], DeviceCfgToCrafData(1));
+    ui->layer2_data_->InitLayerCfg(process_cfg_[2], DeviceCfgToCrafData(2));
+    ui->layer3_data_->InitLayerCfg(process_cfg_[3], DeviceCfgToCrafData(3));
+    ui->layer4_data_->InitLayerCfg(process_cfg_[4], DeviceCfgToCrafData(4));
+    ui->layer5_data_->InitLayerCfg(process_cfg_[5], DeviceCfgToCrafData(5));
+    ui->layer6_data_->InitLayerCfg(process_cfg_[6], DeviceCfgToCrafData(6));
+    ui->layer7_data_->InitLayerCfg(process_cfg_[7], DeviceCfgToCrafData(7));
+    ui->layer8_data_->InitLayerCfg(process_cfg_[8], DeviceCfgToCrafData(8));
+    ui->layer9_data_->InitLayerCfg(process_cfg_[9], DeviceCfgToCrafData(9));
+    ui->layer10_data_->InitLayerCfg(process_cfg_[10], DeviceCfgToCrafData(10));
+    ui->layer11_data_->InitLayerCfg(process_cfg_[11], DeviceCfgToCrafData(11));
+    ui->layer12_data_->InitLayerCfg(process_cfg_[12], DeviceCfgToCrafData(12));
+    ui->layer13_data_->InitLayerCfg(process_cfg_[13], DeviceCfgToCrafData(13));
+    ui->layer14_data_->InitLayerCfg(process_cfg_[14], DeviceCfgToCrafData(14));
+    ui->layer15_data_->InitLayerCfg(process_cfg_[15], DeviceCfgToCrafData(15));
+    ui->layer16_data_->InitLayerCfg(process_cfg_[16], DeviceCfgToCrafData(16));
+    ui->layer17_data_->InitLayerCfg(process_cfg_[17], DeviceCfgToCrafData(17));
+    ui->layer18_data_->InitLayerCfg(process_cfg_[18], DeviceCfgToCrafData(18));
+    ui->layer19_data_->InitLayerCfg(process_cfg_[19], DeviceCfgToCrafData(19));
+}
+
+std::vector<CraftData> CutterMainPage::DeviceCfgToCrafData(int layer) {
+    std::vector<CraftData> datas;
+    CraftData craftdata;
+    for (int i = 0; i < CRAFT_LEVELS; i++) {
+        craftdata.gas = gas_cfg_[layer].gas_[i] - GAS_AIR;
+        craftdata.pressure = gas_cfg_[layer].pressure_[i];
+
+        craftdata.enable_incr = lhc_cfg_[layer].incr_enable_[i];
+        craftdata.incr_time = lhc_cfg_[layer].incr_time_[i];
+        craftdata.jet_height = lhc_cfg_[layer].height_[i];
+
+        craftdata.power = laser_cfg_[layer].peak_power_[i];
+        craftdata.ratio = laser_cfg_[layer].duty_ratio_[i];
+        craftdata.frequency = laser_cfg_[layer].pulse_frequency_[i];
+
+        craftdata.stay = delay_cfg_[layer].stay_[i];
+        craftdata.enable_blow = delay_cfg_[layer].blow_enable_[i];
+        craftdata.blow_time = delay_cfg_[layer].laser_off_blow_time_[i];
+        datas.push_back(craftdata);
+    }
+    return datas;
 }
 
 void CutterMainPage::onPubCfgData(int index) {
@@ -106,27 +191,9 @@ void CutterMainPage::onProcessCfgUpdate(const ProcessCfg &data) {
 }
 
 void CutterMainPage::onCraftUpdate(int level, const CraftData &data) {
-    assert(level < CRAFT_LEVELS);
-
-    gas_cfg_[current_layer_].gas_[level] = kGasMap[data.gas];
-    gas_cfg_[current_layer_].pressure_[level] = data.pressure;
-
-    lhc_cfg_[current_layer_].incr_enable_[level] = data.enable_incr;
-    lhc_cfg_[current_layer_].incr_time_[level] = data.incr_time;
-    lhc_cfg_[current_layer_].height_[level] = data.jet_height;
-
-    laser_cfg_[current_layer_].peak_power_[level] = data.power;
-    laser_cfg_[current_layer_].duty_ratio_[level] = data.ratio;
-    laser_cfg_[current_layer_].pulse_frequency_[level] = data.frequency;
-
-    delay_cfg_[current_layer_].stay_[level] = data.stay;
-    delay_cfg_[current_layer_].blow_enable_[level] = data.enable_blow;
-    delay_cfg_[current_layer_].laser_off_blow_time_[level] = data.blow_time;
-
+    CraftDataToDeviceCfg(current_layer_, level, data);
     layer_data_changed_ = true;
-
 }
-
 
 void CutterMainPage::switchToProcess() {
     ui->container_->setCurrentIndex(0);
@@ -135,38 +202,6 @@ void CutterMainPage::switchToProcess() {
 void CutterMainPage::switchToLayers() {
     ui->container_->setCurrentIndex(1);
     LoadLayersData();
-}
-
-void CutterMainPage::LoadLayersData() {
-     // Init layers cata
-    ProcessCfg process;
-    std::vector<CraftData> craftdata;
-
-#define LOAD_LAYER_DATA(NO) do { \
-    xml_parser_.GetLayerData(NO, process, craftdata); \
-    ui->layer##NO##_data_->InitLayerCfg(process, craftdata); \
-} while (0)
-
-    LOAD_LAYER_DATA(0);
-    LOAD_LAYER_DATA(1);
-    LOAD_LAYER_DATA(2);
-    LOAD_LAYER_DATA(3);
-    LOAD_LAYER_DATA(4);
-    LOAD_LAYER_DATA(5);
-    LOAD_LAYER_DATA(6);
-    LOAD_LAYER_DATA(7);
-    LOAD_LAYER_DATA(8);
-    LOAD_LAYER_DATA(9);
-    LOAD_LAYER_DATA(10);
-    LOAD_LAYER_DATA(11);
-    LOAD_LAYER_DATA(12);
-    LOAD_LAYER_DATA(13);
-    LOAD_LAYER_DATA(14);
-    LOAD_LAYER_DATA(15);
-    LOAD_LAYER_DATA(16);
-    LOAD_LAYER_DATA(17);
-    LOAD_LAYER_DATA(18);
-    LOAD_LAYER_DATA(19);
 }
 
 void CutterMainPage::onOpen() {
