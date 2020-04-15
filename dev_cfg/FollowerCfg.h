@@ -33,7 +33,7 @@ namespace boost {
 namespace serialization {
 
 template <class Archive>
-void serialize(Archive &ar, FollowerCfg &cfg, const unsigned int version) {
+void serialize(Archive &ar, FollowerCfg &cfg, const unsigned int /*version*/) {
   ar & cfg.height_;
   ar & cfg.incr_enable_;
   ar & cfg.incr_time_;

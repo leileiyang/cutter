@@ -8,7 +8,7 @@
 
 
 Controller::Controller(): context_(NULL), requester_(NULL), publisher_(NULL),
-    ack_subscriber_(NULL)
+    ack_subscriber_(NULL), status_subscriber_(NULL)
 {
 
 }
@@ -17,6 +17,7 @@ Controller::~Controller() {
     zmq_close(requester_);
     zmq_close(publisher_);
     zmq_close(ack_subscriber_);
+    zmq_close(status_subscriber_);
     zmq_ctx_destroy(context_);
 }
 
@@ -51,18 +52,28 @@ bool Controller::Initialize() {
     requester_ = zmq_socket(context_, ZMQ_REQ);
     publisher_ = zmq_socket(context_, ZMQ_PUB);
     ack_subscriber_ = zmq_socket(context_, ZMQ_REP);
+    status_subscriber_ = zmq_socket(context_, ZMQ_SUB);
+
+    if (!context_ || !requester_ || !publisher_ || !ack_subscriber_ || \
+        !status_subscriber_) {
+
+        return false;
+    }
 
     zmq_bind(publisher_, "tcp://*:6001");
     zmq_bind(ack_subscriber_, "tcp://*:6000");
 
-    if (!context_ || !requester_ || !publisher_ || !ack_subscriber_) {
+    if (zmq_connect(status_subscriber_, "tcp://10.1.0.139:6002") != 0) {
         return false;
     }
-    if (zmq_connect(requester_, "tcp://10.1.0.138:5555") != 0) {
+    zmq_setsockopt(status_subscriber_, ZMQ_SUBSCRIBE, "", 0);
+
+    if (zmq_connect(requester_, "tcp://10.1.0.139:5555") != 0) {
         return false;
     }
     int opt = 1500;
     zmq_setsockopt(requester_, ZMQ_RCVTIMEO, &opt, sizeof(opt));
+
     return true;
 }
 
@@ -139,8 +150,6 @@ int Controller::CommonCommand(const PlcCmd &cmd) {
     }
 }
 
-
-
 int Controller::PubGasCfg(int layer, const GasCfg &gas_cfg) {
    SERIALIZE_CFG(gas_cfg);
    return PubCfg("GAS", layer, ofs);
@@ -172,4 +181,24 @@ int Controller::SendMessage(void *socket, const char *content, int flags) {
    assert(size >= 0);
    zmq_msg_close(&msg);
    return size;
+}
+
+int Controller::GetTaskStatus(TaskStatus &task_status) {
+  zmq_msg_t msg;
+  int rc = zmq_msg_init(&msg);
+  assert(rc == 0);
+  rc = zmq_msg_recv(&msg, status_subscriber_, ZMQ_DONTWAIT);
+  if (rc <= 0) {
+    if (rc == 0 || errno == EAGAIN) {
+      return 0;
+    } else {
+      return -1;
+    }
+  }
+  std::string content((char *)zmq_msg_data(&msg));
+  zmq_msg_close(&msg);
+  std::istringstream ifs(content);
+  boost::archive::text_iarchive ia(ifs);
+  ia >> task_status;
+  return rc;
 }

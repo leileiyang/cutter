@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     controller.cpp \
     xmlparser/LaserXmlParser.cpp \
     xmlparser/pugixml.cpp \
-    xmlparser/XmlParser.cpp
+    xmlparser/XmlParser.cpp \
+    sampler.cpp \
+    cuttingservice.cpp
 
 HEADERS  += cuttermainpage.h \
     craftparam.h \
@@ -34,7 +36,10 @@ HEADERS  += cuttermainpage.h \
     xmlparser/LaserXmlParser.h \
     xmlparser/pugiconfig.hpp \
     xmlparser/pugixml.hpp \
-    xmlparser/XmlParser.h
+    xmlparser/XmlParser.h \
+    sampler.h \
+    cuttingservice.h \
+    dev_cfg/TaskStatus.h
 
 FORMS    += cuttermainpage.ui \
     craftparam.ui \

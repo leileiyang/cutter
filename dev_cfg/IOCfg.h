@@ -31,7 +31,7 @@ namespace boost {
 namespace serialization {
 
 template <class Archive>
-void serialize(Archive &ar, IOCfg &cfg, const unsigned int version) {
+void serialize(Archive &ar, IOCfg &cfg, const unsigned int /*version*/) {
   ar & cfg.group_id_;
   ar & cfg.func_map_;
 }

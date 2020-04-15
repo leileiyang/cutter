@@ -227,13 +227,13 @@ namespace boost {
 namespace serialization {
 
 template <class Archive>
-void serialize(Archive &ar, PlcCmd &cfg, const unsigned int version) {
+void serialize(Archive &ar, PlcCmd &cfg, const unsigned int /*version*/) {
   ar & cfg.cmd_id;
   ar & cfg.args;
 }
 
 template <class Archive>
-void serialize(Archive &ar, ProcessCfg &cfg, const unsigned int version) {
+void serialize(Archive &ar, ProcessCfg &cfg, const unsigned int /*version*/) {
   ar & cfg.no_lift;
   ar & cfg.keep_air;
   ar & cfg.no_follow;
@@ -246,7 +246,7 @@ void serialize(Archive &ar, ProcessCfg &cfg, const unsigned int version) {
 }
 
 template <class Archive>
-void serialize(Archive &ar, PlcCfg &cfg, const unsigned int version) {
+void serialize(Archive &ar, PlcCfg &cfg, const unsigned int /*version*/) {
   ar & cfg.cutting_;
   ar & cfg.pierce1_;
   ar & cfg.pierce2_;

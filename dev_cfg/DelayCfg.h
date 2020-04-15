@@ -32,7 +32,7 @@ namespace boost {
 namespace serialization {
 
 template <class Archive>
-void serialize(Archive &ar, DelayCfg &cfg, const unsigned int version) {
+void serialize(Archive &ar, DelayCfg &cfg, const unsigned int /*version*/) {
   ar & cfg.stay_;
   ar & cfg.laser_off_blow_time_;
   ar & cfg.blow_enable_;

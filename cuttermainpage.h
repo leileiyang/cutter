@@ -10,7 +10,7 @@
 #include "dev_cfg/PlcCfg.h"
 
 #include "xmlparser/LaserXmlParser.h"
-#include "controller.h"
+#include "cuttingservice.h"
 
 namespace Ui {
 class CutterMainPage;
@@ -60,7 +60,7 @@ private:
     std::vector<FollowerCfg> lhc_cfg_;
     std::vector<LaserCfg> laser_cfg_;
     std::vector<DelayCfg> delay_cfg_;
-    Controller controller_;
+    CuttingService service_;
     LaserXmlParser xml_parser_;
 };
 

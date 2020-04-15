@@ -33,7 +33,7 @@ namespace boost {
 namespace serialization {
 
 template <class Archive>
-void serialize(Archive &ar, LaserCfg &cfg, const unsigned int version) {
+void serialize(Archive &ar, LaserCfg &cfg, const unsigned int /*version*/) {
   ar & cfg.peak_power_;
   ar & cfg.duty_ratio_;
   ar & cfg.pulse_frequency_;

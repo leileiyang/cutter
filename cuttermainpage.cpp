@@ -69,10 +69,8 @@ CutterMainPage::~CutterMainPage()
 }
 
 bool CutterMainPage::Initialize() {
-   if (controller_.Initialize()) {
-      if (!controller_.PreparePubData()) {
-        //return false;
-      }
+   if (!service_.Initialize()) {
+     return false;
    }
    if (xml_parser_.ParseXml("laser_param.xml")) {
      LoadDeviceCfg();
@@ -170,8 +168,8 @@ void CutterMainPage::onPubCfgData(int index) {
     if (layer_data_changed_) {
         layer_data_changed_ = false;
         // publish cfg data
-        controller_.PubGasCfg(current_layer_, gas_cfg_[current_layer_]);
-        controller_.PubLhcCfg(current_layer_, lhc_cfg_[current_layer_]);
+        service_.PubGasCfg(current_layer_, gas_cfg_[current_layer_]);
+        service_.PubLhcCfg(current_layer_, lhc_cfg_[current_layer_]);
     }
     current_layer_ = index;
 }
@@ -205,23 +203,21 @@ void CutterMainPage::switchToLayers() {
 }
 
 void CutterMainPage::onOpen() {
-    controller_.OpenFile("/home/debian/linuxcnc/nc_files/examples/result.ngc");
+    service_.onOpen("/home/debian/linuxcnc/nc_files/examples/rect.ngc");
 }
 
 void CutterMainPage::onStart() {
-  controller_.AutoMode();
-  controller_.Start();
+  service_.onStart();
 }
 
 void CutterMainPage::onStop() {
-  controller_.Stop();
-  controller_.ManualMode();
+  service_.onStop();
 }
 
 void CutterMainPage::onResume() {
-  controller_.Resume();
+  service_.onResume();
 }
 
 void CutterMainPage::onPause() {
-  controller_.Pause();
+  service_.onPause();
 }
